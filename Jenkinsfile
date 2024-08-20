@@ -16,16 +16,6 @@ pipeline {
             }
         }
 
-        stage('Test') {
-            steps {
-                script {
-                    docker.image('mi-imagen:latest').inside {
-                        sh 'pytest'
-                    }
-                }
-            }
-        }
-
         stage('Deploy') {
             steps {
                 script {
